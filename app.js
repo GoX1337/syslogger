@@ -2,12 +2,12 @@ const winston = require('winston');
 require('winston-syslog').Syslog;
 
 let options = {
-    protocol: 'tcp4'
+    protocol: 'tcp4',
+    type: '5424'
 }
 
 const logger = winston.createLogger({
   levels: winston.config.syslog.levels,
-  format: winston.format.json(),
   transports: [
     new winston.transports.Console(),
     new winston.transports.Syslog(options)
