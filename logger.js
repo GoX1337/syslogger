@@ -1,6 +1,6 @@
 const winston = require('winston');
 const { format } = winston;
-const { timestamp, combine, label, json, printf } = format;
+const { timestamp, combine, json, printf } = format;
 require('winston-syslog').Syslog;
 
 const myFormat = printf(info => {
